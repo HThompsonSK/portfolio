@@ -256,6 +256,10 @@ body {
   max-width: var(--text-width);
 }
 
+.approach-text + .approach-text {
+  margin-top: var(--space-md);
+}
+
 /* --- Footer --- */
 
 .site-footer {
