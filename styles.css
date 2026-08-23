@@ -28,7 +28,8 @@ body {
   --border: #e3dfd8;
   --accent: #b85c38;
   --accent-hover: #9a4a2c;
-  --max-width: 680px;
+  --max-width: 960px;
+  --text-width: 72ch;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.75rem;
@@ -100,7 +101,7 @@ body {
   margin: 0;
   font-size: 1.0625rem;
   color: var(--text-muted);
-  max-width: 36ch;
+  max-width: 48ch;
 }
 
 .header-nav {
@@ -148,7 +149,7 @@ body {
   margin: 0;
   font-size: 1.125rem;
   color: var(--text);
-  max-width: 58ch;
+  max-width: var(--text-width);
 }
 
 /* --- Section labels --- */
@@ -207,7 +208,6 @@ body {
   margin: 0 0 var(--space-sm);
   color: var(--text-muted);
   font-size: 0.9375rem;
-  max-width: 52ch;
 }
 
 .project-link {
@@ -253,7 +253,7 @@ body {
 .approach-text {
   margin: 0;
   color: var(--text-muted);
-  max-width: 52ch;
+  max-width: var(--text-width);
 }
 
 /* --- Footer --- */
@@ -311,6 +311,14 @@ body {
 
   .header-nav {
     flex-shrink: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
   }
 }
 
