@@ -2,8 +2,6 @@
 
 :root {
   --bg: #f3f4f1;
-  --bg-deep: #e8eae4;
-  --surface: #ffffff;
   --text: #17191c;
   --text-muted: #5a6068;
   --line: #d5d8d1;
@@ -41,12 +39,6 @@ body {
     linear-gradient(180deg, var(--bg) 0%, #eef0eb 100%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 a {
@@ -176,17 +168,22 @@ a {
 
 .projects {
   padding-block: var(--space-sm) var(--space-lg);
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .project {
-  display: grid;
-  gap: var(--space-md);
+  max-width: var(--text-width);
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.55s var(--ease), transform 0.55s var(--ease);
+  transform: translateY(10px);
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
 }
 
 .project.is-visible {
@@ -194,44 +191,16 @@ a {
   transform: translateY(0);
 }
 
-.project-media {
-  margin: 0;
-  overflow: hidden;
-  background: var(--bg-deep);
-  border: 1px solid var(--line);
-  box-shadow: 0 18px 40px -28px rgba(23, 25, 28, 0.45);
-}
-
-.project-media img {
-  width: 100%;
-  height: auto;
-  transform: scale(1.012);
-  transform-origin: center top;
-  transition: transform 0.7s var(--ease);
-}
-
-.project.is-visible .project-media img {
-  transform: scale(1);
-}
-
-.project-body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.55rem;
-  max-width: 58ch;
-}
-
 .project-title {
-  margin: 0;
+  margin: 0 0 0.45rem;
   font-family: "Bricolage Grotesque", Georgia, serif;
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: -0.025em;
 }
 
 .project-desc {
-  margin: 0;
+  margin: 0 0 0.55rem;
   color: var(--text-muted);
   font-size: 1rem;
 }
@@ -247,7 +216,6 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
-  margin-top: 0.15rem;
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--accent);
@@ -343,16 +311,6 @@ a {
     flex-shrink: 0;
     padding-bottom: 0.2rem;
   }
-
-  .project {
-    grid-template-columns: 1.35fr 1fr;
-    align-items: center;
-    gap: var(--space-lg);
-  }
-
-  .project:nth-of-type(even) .project-media {
-    order: 2;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -366,15 +324,10 @@ a {
     transition: none;
   }
 
-  .project-media img,
   .project-link,
   .project-link::after,
   .header-nav a,
   .footer-nav a {
     transition: none;
-  }
-
-  .project.is-visible .project-media img {
-    transform: none;
   }
 }
