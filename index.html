@@ -7,25 +7,23 @@
   <title>Harry Thompson</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <div class="header-intro">
-          <h1 class="name">Harry Thompson</h1>
-          <p class="tagline">Operator who builds. Procurement, AI-native tooling, and financial governance.</p>
-        </div>
-        <nav class="header-nav" aria-label="Primary">
-          <a href="https://github.com/HThompsonSK" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/harrythompson9/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="assets/Harry Thompson CV.pdf" class="nav-link nav-link--button" download>Download CV</a>
-        </nav>
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="name">Harry Thompson</h1>
+        <p class="tagline">Operator who builds. Procurement, AI-native tooling, and financial governance.</p>
       </div>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="https://github.com/HThompsonSK" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/harrythompson9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="assets/Harry Thompson CV.pdf" class="nav-cv" download>Download CV</a>
+      </nav>
     </div>
   </header>
 
@@ -35,80 +33,108 @@
       <p class="intro-text">
         I'm a Senior Project Manager who joined an EV charging startup at 15 people and helped scale it to 50,
         building AI-powered tools and owning procurement strategy along the way. I build things myself rather
-        than just directing others to build them - from internal finance platforms to e-commerce storefronts.
+        than just directing others to build them — from internal finance platforms to e-commerce storefronts.
         That hands-on approach is how I understand what actually works.
       </p>
     </section>
 
     <section class="projects container" aria-labelledby="projects-heading">
-      <h2 id="projects-heading" class="section-label">Selected work</h2>
-      <ul class="project-list">
-        <li class="project-card">
-          <article>
-            <h3 class="project-title">Pulse</h3>
-            <p class="project-desc">
-              An internal finance platform I built from an Excel MVP using Cursor, now used by 20+ employees.
-              It replaced manual spreadsheet workflows and saves the team roughly 160 hours per quarter.
-            </p>
-            <span class="project-meta">Internal tool</span>
-          </article>
-        </li>
-        <li class="project-card">
-          <article>
-            <h3 class="project-title">Quentl</h3>
-            <p class="project-desc">
-              An AI-powered finance platform for SMB founders, integrating Xero and QuickBooks data into
-              automated dashboards. Currently in trial with two companies.
-            </p>
-            <a href="https://quentl.com" class="project-link" target="_blank" rel="noopener noreferrer">
-              quentl.com
-              <span class="link-arrow" aria-hidden="true">→</span>
-            </a>
-          </article>
-        </li>
-        <li class="project-card">
-          <article>
-            <h3 class="project-title">Pikoromarket</h3>
-            <p class="project-desc">
-              An e-commerce platform bringing UK products to South Korea - self-built and self-run.
-              Product sourcing, storefront, and fulfilment, all handled end to end.
-            </p>
-            <a href="https://pikoromarket.com" class="project-link" target="_blank" rel="noopener noreferrer">
-              pikoromarket.com
-              <span class="link-arrow" aria-hidden="true">→</span>
-            </a>
-          </article>
-        </li>
-      </ul>
+      <h2 id="projects-heading" class="section-heading">Selected work</h2>
+
+      <article class="project">
+        <figure class="project-media">
+          <img
+            src="assets/projects/pulse.jpg"
+            alt="Pulse approvals dashboard showing vendor expenses and status filters"
+            width="1200"
+            height="670"
+            loading="eager"
+          >
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">Pulse</h3>
+          <p class="project-desc">
+            An internal finance platform I built from an Excel MVP using Cursor, now used by 20+ employees.
+            I led a team of software engineers and accountants to bring both sides together and produce Pulse —
+            work that won Fastned’s Efficiency Improvement of the Year award. It replaced manual spreadsheet
+            workflows and saves the team roughly 160 hours per quarter.
+          </p>
+          <p class="project-meta">Internal tool · Fastned award</p>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="project-media">
+          <img
+            src="assets/projects/quentl.jpg"
+            alt="Quentl dashboard with cash balance chart, runway, burn, and MRR metrics"
+            width="1200"
+            height="460"
+            loading="lazy"
+          >
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">Quentl</h3>
+          <p class="project-desc">
+            An AI-powered finance platform for SMB founders, integrating Xero and QuickBooks data into
+            automated dashboards. Currently in trial with two companies.
+          </p>
+          <a href="https://quentl.com" class="project-link" target="_blank" rel="noopener noreferrer">
+            quentl.com
+          </a>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="project-media">
+          <img
+            src="assets/projects/pikoromarket.jpg"
+            alt="Pikoro Market storefront showing a curated monthly UK artisan food box"
+            width="1200"
+            height="671"
+            loading="lazy"
+          >
+        </figure>
+        <div class="project-body">
+          <h3 class="project-title">Pikoromarket</h3>
+          <p class="project-desc">
+            An e-commerce platform bringing UK products to South Korea — self-built and self-run.
+            Product sourcing, storefront, and fulfilment, all handled end to end.
+          </p>
+          <a href="https://pikoromarket.com" class="project-link" target="_blank" rel="noopener noreferrer">
+            pikoromarket.com
+          </a>
+        </div>
+      </article>
     </section>
 
     <section class="approach container" aria-labelledby="approach-heading">
-      <h2 id="approach-heading" class="section-label">But, who am I?</h2>
-      <p class="approach-text">
-        My fun fact is that I'm actually a fully trained tree surgeon, which people never quite believe when I tell them. About 10 years ago, I was a bit lost and found myself in a forest in the north of England cutting down trees, having just finished school with no real idea what I wanted to do next.
-      </p>
-      <p class="approach-text">
-        Looking back, that's the most transformative experience of my life. It's what made me realise the value of applying myself and using education to get where I wanted to go. Since then, I taught myself A-Levels in Maths and Economics, studied BSc Economics at university, and spent two years living and working in South Korea.
-      </p>
-      <p class="approach-text">
-        I'm still figuring things out, and I don't think that ever fully stops, but the most important thing I've learned along the way is about people. I've met incredible people who've taught me lessons no book could, and that's what I want to bring into whatever I do next: no ego, no judgement, just a genuine desire to understand and learn from people.
-      </p>
-      <p class="approach-text">
-        If you've read this far, thanks for taking the time to visit my portfolio. If any of this caught your eye, drop me a message. I don't have a chainsaw anymore.
-      </p>
+      <h2 id="approach-heading" class="section-heading">But, who am I?</h2>
+      <div class="approach-copy">
+        <p>
+          My fun fact is that I'm actually a fully trained tree surgeon, which people never quite believe when I tell them. About 10 years ago, I was a bit lost and found myself in a forest in the north of England cutting down trees, having just finished school with no real idea what I wanted to do next.
+        </p>
+        <p>
+          Looking back, that's the most transformative experience of my life. It's what made me realise the value of applying myself and using education to get where I wanted to go. Since then, I taught myself A-Levels in Maths and Economics, studied BSc Economics at university, and spent two years living and working in South Korea.
+        </p>
+        <p>
+          I'm still figuring things out, and I don't think that ever fully stops, but the most important thing I've learned along the way is about people. I've met incredible people who've taught me lessons no book could, and that's what I want to bring into whatever I do next: no ego, no judgement, just a genuine desire to understand and learn from people.
+        </p>
+        <p>
+          If you've read this far, thanks for taking the time to visit my portfolio. If any of this caught your eye, drop me a message. I don't have a chainsaw anymore.
+        </p>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav" aria-label="Footer">
-        <a href="https://github.com/harrythompson" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <span class="footer-divider" aria-hidden="true">·</span>
-        <a href="https://linkedin.com/in/harrythompson" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="footer-divider" aria-hidden="true">·</span>
+        <a href="https://github.com/HThompsonSK" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/harrythompson9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:harry.thompson057@gmail.com">harry.thompson057@gmail.com</a>
       </nav>
-      <p class="footer-note"><span id="year"></span> </p>
+      <p class="footer-note"><span id="year"></span></p>
     </div>
   </footer>
 

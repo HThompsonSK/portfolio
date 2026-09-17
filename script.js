@@ -6,19 +6,22 @@
     yearEl.textContent = new Date().getFullYear();
   }
 
-  var cards = document.querySelectorAll(".project-card");
-  if (!cards.length || !("IntersectionObserver" in window)) {
-    cards.forEach(function (card) {
-      card.classList.add("is-visible");
+  var projects = document.querySelectorAll(".project");
+  if (!projects.length) return;
+
+  function showAll() {
+    projects.forEach(function (project) {
+      project.classList.add("is-visible");
     });
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    showAll();
     return;
   }
 
-  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReducedMotion) {
-    cards.forEach(function (card) {
-      card.classList.add("is-visible");
-    });
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    showAll();
     return;
   }
 
@@ -31,11 +34,10 @@
         }
       });
     },
-    { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0.12, rootMargin: "0px 0px -36px 0px" }
   );
 
-  cards.forEach(function (card, index) {
-    card.style.transitionDelay = index * 0.08 + "s";
-    observer.observe(card);
+  projects.forEach(function (project) {
+    observer.observe(project);
   });
 })();
