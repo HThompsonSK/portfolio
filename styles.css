@@ -147,10 +147,17 @@ a {
   padding-block: var(--space-lg);
 }
 
-.intro-text {
-  margin: 0;
-  font-size: 1.125rem;
+.intro-copy {
   max-width: var(--text-width);
+  font-size: 1.125rem;
+}
+
+.intro-copy p {
+  margin: 0;
+}
+
+.intro-copy p + p {
+  margin-top: var(--space-md);
 }
 
 /* --- Sections --- */
