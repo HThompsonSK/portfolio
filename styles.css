@@ -1,12 +1,13 @@
 /* --- Tokens --- */
 
 :root {
-  --bg: #f3f4f1;
-  --text: #17191c;
-  --text-muted: #5a6068;
-  --line: #d5d8d1;
-  --accent: #0f5c4c;
-  --accent-hover: #0a4337;
+  --bg: #4b5d36;
+  --text: #fdf5e6;
+  --text-muted: #d9d2c4;
+  --line: rgba(253, 245, 230, 0.22);
+  --line-strong: rgba(253, 245, 230, 0.38);
+  --accent: #fdf5e6;
+  --accent-hover: #ffffff;
   --max-width: 920px;
   --text-width: 62ch;
   --space-xs: 0.5rem;
@@ -28,17 +29,15 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
-  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--text);
-  background:
-    radial-gradient(1200px 480px at 8% -10%, rgba(15, 92, 76, 0.07), transparent 55%),
-    radial-gradient(900px 420px at 100% 0%, rgba(23, 25, 28, 0.04), transparent 50%),
-    linear-gradient(180deg, var(--bg) 0%, #eef0eb 100%);
-  background-attachment: fixed;
+  background-color: var(--bg);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -71,20 +70,54 @@ a {
   top: -100%;
   left: var(--space-md);
   padding: var(--space-xs) var(--space-sm);
-  background: var(--accent);
-  color: #fff;
+  background: var(--text);
+  color: var(--bg);
   text-decoration: none;
   z-index: 100;
+  font-weight: 600;
 }
 
 .skip-link:focus {
   top: var(--space-sm);
 }
 
+/* --- Page decoration --- */
+
+.page-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.page-spine {
+  position: absolute;
+  top: 0;
+  right: clamp(1.75rem, 8vw, 4.5rem);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(253, 245, 230, 0.5) 0%,
+    rgba(253, 245, 230, 0.32) 25%,
+    rgba(253, 245, 230, 0.14) 55%,
+    rgba(253, 245, 230, 0) 92%
+  );
+}
+
 /* --- Header --- */
 
 .site-header {
+  position: relative;
+  z-index: 1;
   padding-block: var(--space-xl) var(--space-lg);
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .header-inner {
@@ -96,19 +129,21 @@ a {
 }
 
 .name {
-  font-family: "Bricolage Grotesque", Georgia, serif;
-  font-size: clamp(2.35rem, 6vw, 3.35rem);
-  font-weight: 600;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
-  margin: 0 0 0.65rem;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-sm);
+  color: var(--text);
 }
 
 .tagline {
   margin: 0;
-  font-size: 1.0625rem;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.55;
   color: var(--text-muted);
-  max-width: 40ch;
+  max-width: 42ch;
 }
 
 .header-nav {
@@ -128,17 +163,17 @@ a {
 
 .header-nav a:hover,
 .header-nav a:focus-visible {
-  color: var(--accent);
+  color: var(--accent-hover);
 }
 
 .nav-cv {
   padding-bottom: 0.1em;
-  border-bottom: 1.5px solid var(--line);
+  border-bottom: 1.5px solid var(--line-strong);
 }
 
 .nav-cv:hover,
 .nav-cv:focus-visible {
-  border-bottom-color: var(--accent);
+  border-bottom-color: var(--accent-hover);
 }
 
 /* --- Intro --- */
@@ -164,7 +199,7 @@ a {
 
 .section-heading {
   margin: 0 0 var(--space-md);
-  font-family: "Bricolage Grotesque", Georgia, serif;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -200,10 +235,11 @@ a {
 
 .project-title {
   margin: 0 0 0.45rem;
-  font-family: "Bricolage Grotesque", Georgia, serif;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
   letter-spacing: -0.025em;
+  color: var(--text);
 }
 
 .project-desc {
@@ -216,7 +252,7 @@ a {
   margin: 0;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--text-muted);
 }
 
 .project-link {
@@ -225,9 +261,9 @@ a {
   gap: 0.35em;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
-  border-bottom: 1.5px solid transparent;
+  border-bottom: 1.5px solid var(--line-strong);
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
@@ -239,7 +275,7 @@ a {
 .project-link:hover,
 .project-link:focus-visible {
   color: var(--accent-hover);
-  border-bottom-color: currentColor;
+  border-bottom-color: var(--accent-hover);
 }
 
 .project-link:hover::after,
@@ -272,7 +308,6 @@ a {
 .site-footer {
   padding-block: var(--space-lg);
   border-top: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.35);
 }
 
 .footer-inner {
@@ -296,7 +331,7 @@ a {
 
 .footer-nav a:hover,
 .footer-nav a:focus-visible {
-  color: var(--accent);
+  color: var(--accent-hover);
 }
 
 .footer-note {
@@ -317,6 +352,12 @@ a {
   .header-nav {
     flex-shrink: 0;
     padding-bottom: 0.2rem;
+  }
+}
+
+@media (max-width: 539px) {
+  .page-spine {
+    display: none;
   }
 }
 
